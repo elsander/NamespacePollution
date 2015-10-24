@@ -23,6 +23,8 @@ if (flag == "install"){
     system(paste("echo", package_name, ">> success.txt"))
   } else {
     system(paste("echo", package_name, ">> failure.txt"))
+    x <- system2("Rscript", paste0("-e \"install.packages('", package_name, ", contriburl=\"https://cran.rstudio.com/src/contrib\"')\""), stdout=TRUE, stderr=TRUE)
+    write(x, file = paste0("../../FailedOutput/", package_name, "-fail.log"))
     print("could not install package!")
   }
 }
