@@ -1,0 +1,16 @@
+There are many problems with the current approach:
+
+1) For compiled code, the DLL are kept in memory, and rapidly reach a limit, causing the error:
+
+Loading required package: spatial
+Error in dyn.load(file, DLLpath = DLLpath, ...) : 
+  unable to load shared object '/usr/lib/R/library/spatial/libs/spatial.so':
+  `maximal number of DLLs reached...
+Error in as.vector(lsf.str(paste("package:", package_name, sep = ""))) : 
+  error in evaluating the argument 'x' in selecting a method for function 'as.vector': Error in as.environment(pos) : 
+  no item called "package:spatial" on the search list
+Calls: lsf.str
+
+Meaning that the package is not loaded.
+
+2)

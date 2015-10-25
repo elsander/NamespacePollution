@@ -1,0 +1,24 @@
+There are many problems with the current approach:
+
+1) For compiled code, the DLL are kept in memory, and rapidly reach a limit, causing the error:
+
+Loading required package: spatial
+Error in dyn.load(file, DLLpath = DLLpath, ...) : 
+  unable to load shared object '/usr/lib/R/library/spatial/libs/spatial.so':
+  `maximal number of DLLs reached...
+Error in as.vector(lsf.str(paste("package:", package_name, sep = ""))) : 
+  error in evaluating the argument 'x' in selecting a method for function 'as.vector': Error in as.environment(pos) : 
+  no item called "package:spatial" on the search list
+Calls: lsf.str
+
+Meaning that the package is not loaded.
+
+2) This also leads to the memory rapidly filling up, causing R to break.
+
+3) Something of the packages is kept after detaching them, causing a cascade of failures to detach:
+
+[1] "stats4"
+Error : package 'stats4' is required by 'modeltools' so will not be detached
+
+It seems to me that the best solution is to launch an instance of R for each package we want to analyze, though it's going to require hours and hours to run the program.
+

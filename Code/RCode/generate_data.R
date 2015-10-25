@@ -33,7 +33,7 @@ my_installed_packages <- unique(as.vector(installed.packages()[,"Package"]))
 # add packages that are loaded automatically
 my_installed_packages <- c(special_packages, my_installed_packages)
 
-blacklist <- c("abbyyR")
+blacklist <- c("abbyyR", "adephylo")
 
 # finally, compile the data
 function_names <- data.frame()
@@ -42,6 +42,6 @@ for (pkg in my_installed_packages){
   if (pkg %in% blacklist == FALSE){
     try(function_names <- rbind(function_names, get_functions_from_package(pkg)))
     print(dim(function_names))
+    write.csv(function_names, "function_names.csv", row.names = FALSE)
   }
 }
-
