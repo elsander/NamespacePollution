@@ -32,6 +32,7 @@ get_functions_from_package <- function(package_name){
 my_installed_packages <- unique(as.vector(installed.packages()[,"Package"]))
 # add packages that are loaded automatically
 my_installed_packages <- c(special_packages, my_installed_packages)
+my_installed_packages <- sort(unique(my_installed_packages))
 
 blacklist <- c("abbyyR", "adephylo")
 

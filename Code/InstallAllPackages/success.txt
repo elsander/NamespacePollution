@@ -1,4 +1,5 @@
 A3
+abbyyR
 abc
 ABCanalysis
 abc.data
@@ -38,6 +39,7 @@ ActuDistns
 ada
 adabag
 adagio
+AdapEnetClass
 adaptDA
 AdaptFit
 AdaptFitOS
@@ -55,6 +57,7 @@ ade4
 ade4TkGUI
 adegenet
 adegraphics
+adehabitat
 adehabitatHR
 adehabitatHS
 adehabitatLT
@@ -79,6 +82,7 @@ aftgee
 AGD
 AggregateR
 agop
+agRee
 Agreement
 agricolae
 agridat
@@ -98,6 +102,7 @@ alabama
 ald
 ALDqr
 AlgDesign
+algstat
 alineR
 ALKr
 allan
@@ -110,6 +115,7 @@ AllPossibleSpellings
 alm
 alphahull
 alphaOutlier
+alphashape3d
 alr3
 alr4
 ALS
@@ -127,8 +133,10 @@ aml
 AMOEBA
 AMORE
 AmpliconDuo
+anacor
 analogsea
 analogue
+analogueExtra
 analyz
 AnalyzeFMRI
 anametrix
@@ -140,6 +148,7 @@ andrews
 anesrake
 anfis
 AnglerCreelSurveySimulation
+animalTrack
 animation
 anim.plots
 AnnotLists
@@ -148,12 +157,14 @@ ANOM
 anominate
 anonymizer
 AnthropMMD
+Anthropometry
 AntWeb
 aod
 aods3
 AOfamilies
 aoos
 ApacheLogProcessor
+apaStyle
 apaTables
 apc
 apcluster
@@ -203,6 +214,7 @@ ARTIVA
 ARTool
 ARTP
 arules
+arulesNBMiner
 arulesSequences
 arulesViz
 aRxiv
@@ -290,12 +302,14 @@ Bagidis
 bagRboostR
 BalancedSampling
 BaM
+bamdit
 BAMMtools
 bandit
 BANFF
 BANOVA
 barcode
 Barnard
+bartMachine
 BAS
 base64
 base64enc
@@ -431,6 +445,7 @@ bibtex
 biclust
 BiDimRegression
 bifactorial
+BIFIEsurvey
 bigalgebra
 biganalytics
 bigdata
@@ -1190,6 +1205,7 @@ DDD
 ddeploy
 DDHFm
 DDIwR
+ddR
 ddst
 deal
 deamer
@@ -1434,6 +1450,7 @@ DTDA
 DTK
 DTMCPack
 DTR
+DTRlearn
 dtt
 dtw
 dtwclust
@@ -1598,6 +1615,7 @@ ENMeval
 ENmisc
 enpls
 EnQuireR
+enRich
 enrichvs
 EnsembleBase
 ensembleBMA
@@ -2669,6 +2687,7 @@ imputeMDR
 imputeMissings
 imputeR
 imputeTS
+imputeYn
 in2extRemes
 inarmix
 inbreedR
@@ -2800,6 +2819,7 @@ ivpanel
 ivprobit
 iWeigReg
 jaatha
+jackknifeKME
 jackstraw
 JacobiEigen
 JADE
@@ -4589,6 +4609,7 @@ qdm
 QFRM
 qgraph
 qgtools
+qicharts
 qiimer
 qlcData
 qlcMatrix
