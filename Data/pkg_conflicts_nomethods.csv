@@ -1,4 +1,4 @@
-V1,V2,V3
+fn,pkg1,pkg2
 A1,CircStats,circular
 A1inv,CircStats,circular
 aa2mass,bio3d,protViz

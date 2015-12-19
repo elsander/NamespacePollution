@@ -1,1 +1,4 @@
 Data/pkg_conflicts.csv
+*#*
+*~
+.Rhistory
