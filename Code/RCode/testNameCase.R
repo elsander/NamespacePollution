@@ -93,3 +93,17 @@ isDotCase <- function(myString){
     return(out)
 }
 
+getCase <- function(myString){
+    if(isUpperCamel(myString)) return(1)
+    if(isLowerCamel(myString)) return(2)
+    if(isSnakeCase(myString)) return(3)
+    if(isDotCase(myString)) return(4)
+    ## return this if we don't match any previous cases
+    return(-1)
+}
+
+caseScript <- function(fname = '../../Data/fn_pkg_method.csv'){
+    fnData <- read.csv(fname, header = TRUE, stringsAsFactors = FALSE)
+    fnData$case <- sapply(fnData$fn, getCase)
+    return(fnData)
+}
