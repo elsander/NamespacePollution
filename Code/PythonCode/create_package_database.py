@@ -13,13 +13,26 @@ Base = declarative_base()
 class Package(Base):
     __tablename__ = 'package'
     package_id = Column(Integer, index = True, primary_key = True)
-    package_name = Column(String(250))
-    email = Column(String(250))
+    package_name = Column(String(100))
+
+class MetaPackage(Base):
+    __tablename__ = 'metapackage'
+    package_id = Column(Integer, ForeignKey('package.package_id'),
+                        index = True, primary_key = True)
+    ## hash of first part of email address
+    email_start = Column(String(100))
+    ## email domain
+    email_end = Column(String(100))
 
 class Function(Base):
     __tablename__ = 'function'
     function_id = Column(Integer, index = True, primary_key = True)
-    function_name = Column(String(250))
+    function_name = Column(String(100))
+
+class MetaFunction(Base):
+    __tablename__ = 'metafunction'
+    function_id = Column(Integer, ForeignKey('function.function_id'),
+                         index = True, primary_key = True)
     ## is it camel case, snake case, etc.
     name_case = Column(Integer)
 
@@ -29,16 +42,19 @@ class Package_Function(Base):
     function_id = Column(Integer, ForeignKey('function.function_id'), primary_key = True)
     ## is the function an S3 or S4 method
     is_method = Column(Boolean)
+    ## is the function imported from another library
+    environment = Column(String(100))
 
-############################################################################3
-############################################################################3
+############################################################################
+############################################################################
     
-def sessionSetup(log = False):
+def session_setup(log = False,
+                  database_path = 'sqlite:///../../Data/R_packages.db'):
     ## Create an engine to store data in a local directory's
     ## sqlalchemy.db file
-    engine=create_engine('sqlite:///R_packages.db')
+    engine=create_engine(database_path)
     if log:
-        logging.basicConfig(filename = 'sqlite.log')
+        logging.basicConfig(filename = 'psql.log')
         logging.getLogger('sqlalchemy.engine').setLevel(logging.DEBUG)
     ## Create all tables in the engine
     Base.metadata.create_all(engine)
@@ -46,8 +62,11 @@ def sessionSetup(log = False):
     session = Session()
     return session, engine
 
-## NEXT THING TO DO:
-## read in fn_pkg_method.csv
-## - iterate through and add information to the database
-## this will give us everything but the email info for all conflict functions
-## later: add non conflict functions to database?
+def populate_package(session, package_file = '../../Data/packages.txt'):
+    with open(package_file, 'rb') as f:
+        for line in f:
+            print line
+            package = Package(package_name = line)
+            session.add(package)
+            session.flush()
+    session.commit()
