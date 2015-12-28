@@ -1,4 +1,5 @@
 import logging
+import csv
 
 from sqlalchemy import Column, ForeignKey, Integer, String, Float, Boolean
 from sqlalchemy import create_engine, Index
@@ -15,7 +16,7 @@ class Package(Base):
     package_id = Column(Integer, index = True, primary_key = True)
     package_name = Column(String(100))
 
-class MetaPackage(Base:)    
+class MetaPackage(Base):
     __tablename__ = 'metapackage'
     package_id = Column(Integer, ForeignKey('package.package_id'),
                         index = True, primary_key = True)
@@ -29,10 +30,11 @@ class Function(Base):
     function_id = Column(Integer, index = True, primary_key = True)
     function_name = Column(String(100))
 
-class Function(Base):
-    ## is it camel case, snake case, etc.
+class MetaFunction(Base):
+    __tablename__ = 'metafunction'
     function_id = Column(Integer, ForeignKey('function.function_id'),
                          index = True, primary_key = True)
+    ## is it camel case, snake case, etc.
     name_case = Column(Integer)
 
 class Package_Function(Base):
@@ -48,7 +50,7 @@ class Package_Function(Base):
 ############################################################################
     
 def session_setup(log = False,
-                  database_path = 'postgresql://postgres:password@decan/R_packages'):
+                  database_path = 'sqlite:///../../Data/R_packages.db'):
     ## Create an engine to store data in a local directory's
     ## sqlalchemy.db file
     engine=create_engine(database_path)
@@ -60,3 +62,29 @@ def session_setup(log = False,
     Session = sessionmaker(bind = engine)
     session = Session()
     return session, engine
+
+def populate_package(session, package_file = '../../Data/packages.csv'):
+    with open(package_file, 'rb') as f:
+        ## first line will be the column names
+        col_names = f.readline().strip().split(',')
+        ## initialize line_dict
+        line_dict = dict()
+        for line in f:
+            ## strip newline
+            line = line.strip().split(',')
+            for i in range(len(col_names)):
+                line_dict[col_names[i]] = line[i]
+            package = Package(**line_dict)
+            session.add(package)
+            session.flush()
+    session.commit()
+
+def dump_package(session, package_file = '../../Data/packages.csv'):
+    session.query(Package)
+    with open(package_file, 'wb') as f:
+        outcsv = csv.writer(f)
+        records = session.query(Package)
+        ## write column names
+        outcsv.writerow([str(column.name) for column in Package.__mapper__.columns])
+        ## write database entries
+        [outcsv.writerow([str(getattr(curr, column.name)) for column in Package.__mapper__.columns]) for curr in records]
