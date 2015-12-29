@@ -10,6 +10,7 @@ class Package(Base):
     __tablename__ = 'package'
     package_id = Column(Integer, index = True, primary_key = True)
     package_name = Column(String(100))
+    functions = relationship('Function', secondary = 'package_function')
 
 class MetaPackage(Base):
     __tablename__ = 'metapackage'
@@ -24,6 +25,7 @@ class Function(Base):
     __tablename__ = 'function'
     function_id = Column(Integer, index = True, primary_key = True)
     function_name = Column(String(100))
+    packages = relationship('Package', secondary = 'package_function')
 
 class MetaFunction(Base):
     __tablename__ = 'metafunction'
@@ -36,7 +38,9 @@ class Package_Function(Base):
     __tablename__ = 'package_function'
     package_id = Column(Integer, ForeignKey('package.package_id'), primary_key = True)
     function_id = Column(Integer, ForeignKey('function.function_id'), primary_key = True)
-    ## is the function an S3 or S4 method
+    ## is the function an S3/S4 method
+    ## -1 = NA/undetermined, 1 = True, 0 = False
     is_method = Column(Integer)
     ## is the function imported from another library
-    environment = Column(String(100))
+    ## this is represented as another package_id
+    namespace_id = Column(Integer, ForeignKey('package.package_id'))

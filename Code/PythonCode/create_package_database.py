@@ -9,6 +9,8 @@ from sqlalchemy.sql import select
 
 from sqlalchemy_schema import *
 
+import ipdb
+
 def session_setup(log = False,
                   database_path = 'sqlite:///../../Data/R_packages.db'):
     ## Create an engine to store data in a local directory's
@@ -49,7 +51,7 @@ def populate_package_function(session,
             if line[0] not in packages.keys():
                 ## select package_id from package where package_name = line[0]
                 result = session.query(Package).filter(Package.package_name == line[0])
-                if not result:
+                if not result.first():
                     pkg = Package(package_name = line[0])
                     session.add(pkg)
                     session.flush()
@@ -61,24 +63,37 @@ def populate_package_function(session,
             if line[1] not in functions.keys():
                 ## select function_id from function where function_name = line[1]
                 result = session.query(Function).filter(Function.function_name == line[1])
-                if not result:
+                if not result.first():
                     fn = Function(function_name = line[1])
-                    session.add(function)
+                    session.add(fn)
                     session.flush()
                     ## now query again to get the id number
                     result = session.query(Function).filter(Function.function_name ==
                                                             line[1])
                 result = result.first().function_id
                 functions[line[1]] = result
+            if line[2] not in packages.keys():
+                ## namespace is just a package
+                ## select package_id from package where package_name = line[2]
+                result = session.query(Package).filter(Package.package_name == line[2])
+                if not result.first():
+                    pkg = Package(package_name = line[2])
+                    session.add(pkg)
+                    session.flush()
+                    ## query again to get id number
+                    result = session.query(Package).filter(Package.package_name ==
+                                                           line[2])
+                result = result.first().package_id
+                packages[line[2]] = result
             session.commit()
 
             ## now add the line to the linking table
             ## NOTE:
-            ## no information about methods or environments for now
+            ## no information about methods for now
             package_function = Package_Function(package_id = packages[line[0]],
                                                 function_id = functions[line[1]],
                                                 is_method = -1,
-                                                environment = 'NA')
+                                                namespace_id = packages[line[2]])
             session.add(package_function)
             session.flush()
     session.commit()
@@ -92,3 +107,9 @@ def dump_package(session, package_file = '../../Data/package.csv'):
         outcsv.writerow([str(column.name) for column in Package.__mapper__.columns])
         ## write database entries
         [outcsv.writerow([str(getattr(curr, column.name)) for column in Package.__mapper__.columns]) for curr in records]
+
+def build_database(package_file = '../../Data/package.csv',
+                   package_function_file = '../../Data/package_function_namespace.csv'):
+    session, engine = session_setup()
+    populate_package(session, table_file = package_file)
+    populate_package_function(session, table_file = package_function_file)
