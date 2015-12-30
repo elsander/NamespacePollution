@@ -1,5 +1,6 @@
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy import Index
+from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 ## sets up Base as a basic table class for SQLalchemy
@@ -10,6 +11,7 @@ class Package(Base):
     __tablename__ = 'package'
     package_id = Column(Integer, index = True, primary_key = True)
     package_name = Column(String(100))
+    functions = relationship('Package_Function', backref = 'package')
 
 class MetaPackage(Base):
     __tablename__ = 'metapackage'
@@ -24,6 +26,7 @@ class Function(Base):
     __tablename__ = 'function'
     function_id = Column(Integer, index = True, primary_key = True)
     function_name = Column(String(100))
+    packages = relationship('Package_Function', backref = 'function')
 
 class MetaFunction(Base):
     __tablename__ = 'metafunction'
@@ -36,7 +39,5 @@ class Package_Function(Base):
     __tablename__ = 'package_function'
     package_id = Column(Integer, ForeignKey('package.package_id'), primary_key = True)
     function_id = Column(Integer, ForeignKey('function.function_id'), primary_key = True)
-    ## is the function an S3 or S4 method
-    is_method = Column(Integer)
-    ## is the function imported from another library
-    environment = Column(String(100))
+    ## is this function in this package in conflict with another function?
+    is_conflict = Column(Integer, default = 0)
