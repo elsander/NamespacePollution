@@ -151,7 +151,8 @@ def dump_function(session, function_file = '../../Data/function.csv'):
                           for column in Function.__mapper__.columns]) for curr in records]
 
 
-def dump_package_function(session, function_file = '../../Data/package_function.csv'):
+def dump_package_function(session,
+                          package_function_file = '../../Data/package_function.csv'):
     with open(package_function_file, 'w') as f:
         outcsv = csv.writer(f)
         records = session.query(Package_Function)
@@ -161,3 +162,15 @@ def dump_package_function(session, function_file = '../../Data/package_function.
         [outcsv.writerow([str(getattr(curr, column.name)) \
                           for column in Package_Function.__mapper__.columns])\
          for curr in records]
+
+def dump_database(session):
+    print('Dumping Package table...')
+    dump_package(session, package_file = '../../Data/package.csv')
+    print('Done!')
+    print('Dumping Function table...')
+    dump_function(session, function_file = '../../Data/function.csv')
+    print('Done!')
+    print('Dumping Package_Function table...')
+    dump_package_function(session,
+                          package_function_file = '../../Data/package_function.csv')
+    print('Done!')
