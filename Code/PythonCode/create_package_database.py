@@ -10,9 +10,7 @@ from sqlalchemy.sql import select
 
 from sqlalchemy_schema import *
 
-import ipdb
-
-def session_setup(log = False, database_path = 'sqlite://'):
+def session_setup(log = False, database_path = 'sqlite:///../../Data/R_packages.db'):
     '''This function sets up a sqlalchemy session, intializing the session
     and engine. Optionally, it intializes logging.'''
     ## this default database path corresponds to creating the database in memory
@@ -54,7 +52,7 @@ def populate_package_function(session,
     names.'''
     ## get number of lines in package_function to calculate percentages.
     nlines = subprocess.check_output("wc -l " + table_file, shell = True)
-    nlines = nlines.decode('UTF-8').strip().split(' ')[0]
+    nlines = int(nlines.decode('UTF-8').strip().split(' ')[0])
     
     ## only run this after the package table has been populated!
     functions = set([])
@@ -63,8 +61,8 @@ def populate_package_function(session,
     with open(table_file, 'r') as f:
         for line in f:
             k += 1
-            if k % 10000 == 0:
-                print(k/nlines)
+            if k % 1000 == 0:
+                print("%.4f percent complete" % (k/nlines))
             line = line.strip().split(',')
             if line[0] not in packages.keys():
                 pkg = session.query(Package).filter(Package.package_name ==
@@ -79,9 +77,15 @@ def populate_package_function(session,
             else:
                 fn = session.query(Function).filter(Function.function_name ==
                                                     line[1]).first()
-            junction = Package_Function(package = pkg, function = fn)
+            if len(session.query(Function).\
+                   filter(Function.function_name == fn.function_name,
+                          Package.package_name == pkg.package_name).\
+                   all()) >= 1:
+                continue
+            else:
+                junction = Package_Function(package = pkg, function = fn)
             session.add(junction)
-            session.commit()
+        session.commit()
 
 def populate_with_conflicts(session,
                             table_file = '../../Data/conflict_adjlist.csv'):
@@ -128,7 +132,8 @@ def load_database():
     populate_with_conflicts(session,
                             table_file = '../../Data/conflict_adjlist.csv')
     print("Done!")
-    print("Database is stored in R_pkgs.db")
+    print("Database is stored in ../../Data/R_packages.db")
+    return session, engine
     
 def dump_package(session, package_file = '../../Data/package.csv'):
     with open(package_file, 'w') as f:
