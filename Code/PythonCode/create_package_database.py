@@ -1,6 +1,7 @@
 import logging
 import csv
 import subprocess
+import ipdb
 
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy import create_engine, Index, update
@@ -27,65 +28,64 @@ def session_setup(log = False, database_path = 'sqlite:///../../Data/R_packages.
     session = Session()
     return session, engine
 
-def populate_package(session, table_file = '../../Data/package.csv'):
+def populate_base_table(session, table = 'package',
+                        table_file = '../../Data/package.csv'):
     '''This function populates the package table with package names
     from a csv file.'''
+    ## get number of lines in package_function to calculate percentages.
+    nlines = subprocess.check_output("wc -l " + table_file, shell = True)
+    nlines = int(nlines.decode('UTF-8').strip().split(' ')[0])
+    k = 0
     with open(table_file, 'r') as f:
         ## first line will be the column names
         col_names = f.readline().strip().split(',')
         ## initialize line_dict
         line_dict = dict()
         for line in f:
+            if k % 10000 == 0:
+                print("%.4f percent complete" % (k/nlines*100))
+            k += 1
             ## strip newline
             line = line.strip().split(',')
             for i in range(len(col_names)):
                 line_dict[col_names[i]] = line[i]
-            package = Package(**line_dict)
-            session.add(package)
+            if table == 'package':
+                entry = Package(**line_dict)
+            elif table == 'function':
+                entry = Function(**line_dict)
+            else:
+                raise ValueError
+            session.add(entry)
             session.flush()
     session.commit()
-
+    
 def populate_package_function(session,
                        table_file = '../../Data/package_function.csv'):
     '''This function populates the package_function junction table from 
-    a csv file. In doing so, it also populates the function table with function
-    names.'''
+    a csv file.'''
     ## get number of lines in package_function to calculate percentages.
     nlines = subprocess.check_output("wc -l " + table_file, shell = True)
     nlines = int(nlines.decode('UTF-8').strip().split(' ')[0])
     
     ## only run this after the package table has been populated!
-    functions = set([])
-    packages = dict()
     k = 0
     with open(table_file, 'r') as f:
+        ## skip header line
+        f.readline()
         for line in f:
-            k += 1
             if k % 1000 == 0:
-                print("%.4f percent complete" % (k/nlines))
+                print("%.4f percent complete" % (k/nlines*100))
+            k += 1
             line = line.strip().split(',')
-            if line[0] not in packages.keys():
-                pkg = session.query(Package).filter(Package.package_name ==
+            line = [int(entry) for entry in line]
+            pkg = session.query(Package).filter(Package.package_id ==
                                                     line[0]).first()
-                if pkg:
-                    packages[line[0]] = pkg
-                else:
-                    pkg = Package(package_name = line[0])
-            if line[1] not in functions:
-                functions.add(line[1])
-                fn = Function(function_name = line[1])
-            else:
-                fn = session.query(Function).filter(Function.function_name ==
-                                                    line[1]).first()
-            if len(session.query(Function).\
-                   filter(Function.function_name == fn.function_name,
-                          Package.package_name == pkg.package_name).\
-                   all()) >= 1:
-                continue
-            else:
-                junction = Package_Function(package = pkg, function = fn)
+            fn = session.query(Function).filter(Function.function_id ==
+                                                line[1]).first()
+            junction = Package_Function(package = pkg, function = fn,
+                                        is_conflict = line[2])
             session.add(junction)
-        session.commit()
+    session.commit()
 
 def populate_with_conflicts(session,
                             table_file = '../../Data/conflict_adjlist.csv'):
@@ -93,41 +93,56 @@ def populate_with_conflicts(session,
     package-function combinations which are conflicts.'''
     ## get number of lines in package_function to calculate percentages.
     nlines = subprocess.check_output("wc -l " + table_file, shell = True)
-    nlines = nlines.decode('UTF-8').strip().split(' ')[0]
+    nlines = int(nlines.decode('UTF-8').strip().split(' ')[0])
     k = 0
-    
+    f_missed = open('../../Data/conflict_missed.csv', 'w')
     with open(table_file, 'r') as f:
         ## skip header line
         f.readline()
-        for line in f:
-            if k % 10000 == 0:
-                print(k/nlines)
+        for line_string in f:
+            if k % 1000 == 0:
+                print("%.4f percent complete" % (k/nlines*100))
             ## line[0] is function, line[1] is package
-            line = line.strip().split(',')
+            line = line_string.strip().split(',')
             try:
-                fn_result = session.query(Function).filter_by(function_name = line[0])
-                fn_id = fn_result.first().function_id
-                pkg_result = session.query(Package).filter_by(package_name = line[1])
-                pkg_id = pkg_result.first().package_id
+                fn_result = session.query(Function).\
+                            filter_by(function_name = line[0]).first()
+                fn_id = fn_result.function_id
+                pkg_result = session.query(Package).\
+                             filter_by(package_name = line[1]).first()
+                pkg_id = pkg_result.package_id
                 pkg_fn = session.query(Package_Function).\
-                         filter_by(function_id = fn_id, package_id = pkg_id).first()
+                         filter(Package_Function.function_id == fn_id,
+                                Package_Function.package_id == pkg_id).first()
                 pkg_fn.is_conflict = 1
                 session.flush()
             except:
-                pass
-                # print(line)
+                f_missed.write(line_string)
             k += 1
     session.commit()
+    f_missed.close()
+
+def populate_meta_package(session, table_file):
+    pass
+    
+def populate_meta_function(session, table_file):
+    pass
     
 def load_database():
     session, engine = session_setup()
     print("Populating package table...")
-    populate_package(session, table_file = '../../Data/package.csv')
+    populate_base_table(session, table = 'package', table_file = '../../Data/package.csv')
     print("Done!")
-    print("Populating function and package_function tables. This may take twenty minutes or more...")
+    print("Populating function table...")
+    populate_base_table(session, table = 'function',
+                        table_file = '../../Data/function.csv')
+    print("Done!")
+    ipdb.set_trace()
+    print("Populating package_function table. This may take twenty minutes or more...")
     populate_package_function(session,
                        table_file = '../../Data/package_function.csv')
     print("Done!")
+    ipdb.set_trace()
     print("Adding conflicts to package_function table...")
     populate_with_conflicts(session,
                             table_file = '../../Data/conflict_adjlist.csv')
@@ -179,3 +194,44 @@ def dump_database(session):
     dump_package_function(session,
                           package_function_file = '../../Data/package_function.csv')
     print('Done!')
+
+def populate_package_function_from_names(session,
+                       table_file = '../../Data/pkg_function.csv'):
+    '''This function populates the package_function junction table from 
+    a csv file. In doing so, it also populates the function table with function
+    names.'''
+    ## get number of lines in package_function to calculate percentages.
+    nlines = subprocess.check_output("wc -l " + table_file, shell = True)
+    nlines = int(nlines.decode('UTF-8').strip().split(' ')[0])
+    
+    k = 0
+    with open(table_file, 'r') as f:
+        try:
+            for line in f:
+                k += 1
+                if k % 1000 == 0:
+                    print("%.4f percent complete" % (k/nlines*100))
+                line = line.strip().split(',')
+                pkg = session.query(Package).filter(Package.package_name ==
+                                                    line[0]).first()
+                if not pkg:
+                    pkg = Package(package_name = line[0])
+                    session.add(pkg)
+
+                fn = session.query(Function).filter(Function.function_name ==
+                                                    line[1]).first()
+                if not fn:
+                    fn = Function(function_name = line[1])
+                    session.add(fn)
+                if not session.query(Package_Function).\
+                   filter(Package_Function.function_id == fn.function_id,
+                          Package_Function.package_id == pkg.package_id).first():
+                    junction = Package_Function(package = pkg, function = fn)
+                    session.add(junction)
+                else:
+                    print(fn.function_name)
+                    print(pkg.package_name)
+                    continue
+            session.commit()
+        except:
+            ipdb.set_trace()
