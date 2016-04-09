@@ -228,10 +228,10 @@ def populate_package_function_from_names(session,
                           Package_Function.package_id == pkg.package_id).first():
                     junction = Package_Function(package = pkg, function = fn)
                     session.add(junction)
-                else:
-                    print(fn.function_name)
-                    print(pkg.package_name)
-                    continue
+                # else:
+                #     print(fn.function_name)
+                #     print(pkg.package_name)
+                #     continue
             session.commit()
         except:
             ipdb.set_trace()
