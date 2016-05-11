@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS metapackage;
 DROP TABLE IF EXISTS function;
 DROP TABLE IF EXISTS metafunction;
 DROP TABLE IF EXISTS package_function;
+DROP TABLE IF EXISTS package_conflict;
 DROP TABLE IF EXISTS tmp;
 DROP VIEW IF EXISTS v_all;
 DROP VIEW IF EXISTS v_conflict;
@@ -64,7 +65,7 @@ CREATE TABLE package_function (
 package_id INTEGER,
 function_id INTEGER,
 is_conflict INTEGER,
-FOREIGN KEY(package_id) REFERENCES package(package_id)
+FOREIGN KEY(package_id) REFERENCES package(package_id),
 FOREIGN KEY(function_id) REFERENCES function(function_id)
 );
 
@@ -80,6 +81,35 @@ FROM tmp;
   
 DROP TABLE tmp;
 .tables
+
+/*#################################
+CREATE TABLE package_conflict
+#################################*/
+.mode csv
+.import pkg_conflicts.csv tmp
+.tables
+
+CREATE TABLE package_conflict (
+function_id INTEGER,
+pkg1_id INTEGER,
+pkg2_id INTEGER,
+FOREIGN KEY(pkg1_id) REFERENCES package(package_id),
+FOREIGN KEY(pkg2_id) REFERENCES package(package_id)
+);
+
+INSERT INTO package_conflict(
+"function_id",
+"pkg1_id",
+"pkg2_id"
+) SELECT 
+"function_id",
+"pkg1_id",
+"pkg2_id"
+FROM tmp;
+  
+DROP TABLE tmp;
+.tables
+
 
 /*#################################
 Some handy queries and views
