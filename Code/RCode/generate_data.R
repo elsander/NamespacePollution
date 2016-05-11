@@ -15,7 +15,7 @@ get_functions_from_package <- function(package_name){
   # load the package
   eval(substitute(require(pkg), list(pkg = as.name(package_name))))
   # extract the functions
-  my_funcs <- as.vector(lsf.str(paste("package:", package_name, sep = "")))
+  my_funcs <- as.vector(ls.str(paste("package:", package_name, sep = "")))
   # unload the package
   if (package_name %in% special_packages == FALSE){
     detach(paste("package:", package_name, sep = ""), character.only = TRUE)

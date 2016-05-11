@@ -25208,7 +25208,7 @@ DescTools LeveneTest.default
 DescTools LeveneTest.formula
 DescTools LeveneTest.lm
 DescTools %like%
-DescTools %like any%
+DescTools %like_any%
 DescTools LillieTest
 DescTools lines.Lc
 DescTools lines.lm
@@ -64968,7 +64968,7 @@ magrittr is_weakly_less_than
 magrittr mod
 magrittr multiply_by
 magrittr multiply_by_matrix
-magrittr n'est pas
+magrittr n'est_pas
 magrittr not
 magrittr or
 magrittr raise_to_power
