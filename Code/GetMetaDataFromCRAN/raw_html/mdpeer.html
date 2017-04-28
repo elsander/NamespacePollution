@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package mdpeer</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="citation_title" content="Graph-Constrained Regression with Enhanced Regularization
+Parameters Selection [R package mdpeer version 0.1.0]" />
+<meta name="citation_author" content="Marta Karas" />
+<meta name="citation_publication_date.Published" content="2016-11-25" />
+<meta name="citation_public_url" content="https://CRAN.R-project.org/package=mdpeer" />
+<meta name="DC.identifier" content="https://CRAN.R-project.org/package=mdpeer" />
+<meta name="DC.publisher" content="Comprehensive R Archive Network (CRAN)" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>mdpeer: Graph-Constrained Regression with Enhanced Regularization
+Parameters Selection</h2>
+<p>Performs graph-constrained regularization in which regularization parameters are selected with the use of a known fact of equivalence between penalized regression and Linear Mixed Model solutions. Provides implementation of three different regression methods where graph-constraints among coefficients are accounted for. 'crPEER' (Partially Empirical Eigenvectors for Regression with Constant Ridge, Constant Ridge PEER) method utilizes additional Ridge term to handle the non-invertibility of a graph Laplacian matrix. 'vrPEER' (Variable Reduction PEER) method performs variable-reduction procedure to handle the non-invertibility of a graph Laplacian matrix. Finally, 'RidgePEER' method employs a penalty term being a linear combination of graph-originated and Ridge-originated penalty terms, whose two regularization parameters are ML estimators from corresponding Linear Mixed Model solution. Notably, in 'RidgePEER' method a graph-originated penalty term allows imposing similarity between coefficients based on graph information given whereas additional Ridge-originated penalty term facilitates parameters estimation: it reduces computational issues arising from singularity in a graph-originated penalty matrix and yields plausible results in situations when graph information is not informative or when it is unclear whether connectivities represented by a graph reflect similarities among corresponding coefficients.</p>
+<table summary="Package mdpeer summary">
+<tr>
+<td>Version:</td>
+<td>0.1.0</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.3.1)</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../MASS/index.html">MASS</a>, <a href="../glmgraph/index.html">glmgraph</a>, <a href="../magic/index.html">magic</a>, <a href="../reshape2/index.html">reshape2</a>, <a href="../ggplot2/index.html">ggplot2</a>, <a href="../scalreg/index.html">scalreg</a>, <a href="../glmnet/index.html">glmnet</a>, <a href="../nlme/index.html">nlme</a>, <a href="../nloptr/index.html">nloptr</a></td>
+</tr>
+<tr>
+<td>Suggests:</td>
+<td><a href="../knitr/index.html">knitr</a>, <a href="../rmarkdown/index.html">rmarkdown</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2016-11-25</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Marta Karas [aut, cre], Damian Brzyski [ctb], Jaroslaw Harezlak [ctb]</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Marta Karas  &#x3c;&#x6d;&#x61;&#x72;&#x74;&#x61;&#x2e;&#x6b;&#x61;&#x72;&#x61;&#x73;&#x73;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;</td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/GPL-2">GPL-2</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="README.html">README</a> </td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_mdpeer.html">mdpeer results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package mdpeer downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="mdpeer.pdf"> mdpeer.pdf </a> </td>
+</tr>
+<tr>
+<td>Vignettes:</td>
+<td>
+<a href="vignettes/Introduction_and_usage_examples.html">Introduction and usage examples</a><br/>
+</td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/mdpeer_0.1.0.tar.gz"> mdpeer_0.1.0.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/mdpeer_0.1.0.zip">mdpeer_0.1.0.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/mdpeer_0.1.0.zip">mdpeer_0.1.0.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/mdpeer_0.1.0.zip">mdpeer_0.1.0.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: <a href="../../../bin/macosx/el-capitan/contrib/3.4/mdpeer_0.1.0.tgz">mdpeer_0.1.0.tgz</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/mdpeer_0.1.0.tgz">mdpeer_0.1.0.tgz</a> </td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=mdpeer"><samp>https://CRAN.R-project.org/package=mdpeer</samp></a>
+to link to this page.</p>
+</body>
+</html>

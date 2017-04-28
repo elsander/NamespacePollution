@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package mlr</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="citation_title" content="Machine Learning in R [R package mlr version 2.11]" />
+<meta name="citation_author1" content="Bernd Bischl" />
+<meta name="citation_author2" content="Michel Lang" />
+<meta name="citation_author3" content="Lars Kotthoff" />
+<meta name="citation_author4" content="Julia Schiffner" />
+<meta name="citation_author5" content="Jakob Richter" />
+<meta name="citation_author6" content="Zachary Jones" />
+<meta name="citation_author7" content="Giuseppe Casalicchio" />
+<meta name="citation_author8" content="Mason Gallo" />
+<meta name="citation_publication_date.Published" content="2017-03-15" />
+<meta name="citation_public_url" content="https://CRAN.R-project.org/package=mlr" />
+<meta name="DC.identifier" content="https://CRAN.R-project.org/package=mlr" />
+<meta name="DC.publisher" content="Comprehensive R Archive Network (CRAN)" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>mlr: Machine Learning in R</h2>
+<p>Interface to a large number of classification and regression
+    techniques, including machine-readable parameter descriptions. There is
+    also an experimental extension for survival analysis, clustering and
+    general, example-specific cost-sensitive learning. Generic resampling,
+    including cross-validation, bootstrapping and subsampling. Hyperparameter
+    tuning with modern optimization techniques, for single- and multi-objective
+    problems. Filter and wrapper methods for feature selection. Extension of
+    basic learners with additional operations common in machine learning, also
+    allowing for easy nested resampling. Most operations can be parallelized.</p>
+<table summary="Package mlr summary">
+<tr>
+<td>Version:</td>
+<td>2.11</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.0.2), <a href="../ParamHelpers/index.html">ParamHelpers</a> (&ge; 1.10)</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../BBmisc/index.html">BBmisc</a> (&ge; 1.11), <a href="../backports/index.html">backports</a>, <a href="../ggplot2/index.html">ggplot2</a>, stats, <a href="../stringi/index.html">stringi</a>, <a href="../checkmate/index.html">checkmate</a> (&ge; 1.8.2), <a href="../data.table/index.html">data.table</a>, methods, <a href="../parallelMap/index.html">parallelMap</a> (&ge;
+1.3), <a href="../survival/index.html">survival</a>, utils</td>
+</tr>
+<tr>
+<td>Suggests:</td>
+<td><a href="../ada/index.html">ada</a>, <a href="../adabag/index.html">adabag</a>, <a href="../bartMachine/index.html">bartMachine</a>, <a href="../batchtools/index.html">batchtools</a>, <a href="../brnn/index.html">brnn</a>, <a href="../bst/index.html">bst</a>, <a href="../C50/index.html">C50</a>, <a href="../care/index.html">care</a>, <a href="../caret/index.html">caret</a> (&ge; 6.0-57), <a href="../class/index.html">class</a>, <a href="../clue/index.html">clue</a>, <a href="../cluster/index.html">cluster</a>, <a href="../clusterSim/index.html">clusterSim</a> (&ge;
+0.44-5), <a href="../clValid/index.html">clValid</a>, <a href="../cmaes/index.html">cmaes</a>, <a href="../CoxBoost/index.html">CoxBoost</a>, <a href="../crs/index.html">crs</a>, <a href="../Cubist/index.html">Cubist</a>, <a href="../deepnet/index.html">deepnet</a>, <a href="../DiceKriging/index.html">DiceKriging</a>, <a href="../DiceOptim/index.html">DiceOptim</a>, <a href="../DiscriMiner/index.html">DiscriMiner</a>, <a href="../e1071/index.html">e1071</a>, <a href="../earth/index.html">earth</a>, <a href="../elasticnet/index.html">elasticnet</a>, <a href="../elmNN/index.html">elmNN</a>, <a href="../emoa/index.html">emoa</a>, <a href="../evtree/index.html">evtree</a>, <a href="../extraTrees/index.html">extraTrees</a>, <a href="../flare/index.html">flare</a>, <a href="../fields/index.html">fields</a>, <a href="../FNN/index.html">FNN</a>, <a href="../fpc/index.html">fpc</a>, <a href="../frbs/index.html">frbs</a>, <a href="../FSelector/index.html">FSelector</a>, <a href="../gbm/index.html">gbm</a>, <a href="../GenSA/index.html">GenSA</a>, <a href="../ggvis/index.html">ggvis</a>, <a href="../glmnet/index.html">glmnet</a>, <a href="../h2o/index.html">h2o</a> (&ge; 3.6.0.8), <a href="../GPfit/index.html">GPfit</a>, <a href="../Hmisc/index.html">Hmisc</a>, <a href="../ipred/index.html">ipred</a>, <a href="../irace/index.html">irace</a> (&ge; 2.0), <a href="../kernlab/index.html">kernlab</a>, <a href="../kknn/index.html">kknn</a>, <a href="../klaR/index.html">klaR</a>, <a href="../knitr/index.html">knitr</a>, <a href="../kohonen/index.html">kohonen</a>, <a href="../laGP/index.html">laGP</a>, <a href="../LiblineaR/index.html">LiblineaR</a>, <a href="../lqa/index.html">lqa</a>, <a href="../MASS/index.html">MASS</a>, <a href="../mboost/index.html">mboost</a>, <a href="../mco/index.html">mco</a>, <a href="../mda/index.html">mda</a>, <a href="../mlbench/index.html">mlbench</a>, <a href="../mldr/index.html">mldr</a>, <a href="../mlrMBO/index.html">mlrMBO</a>, <a href="../modeltools/index.html">modeltools</a>, <a href="../mRMRe/index.html">mRMRe</a>, <a href="../nnet/index.html">nnet</a>, <a href="../nodeHarvest/index.html">nodeHarvest</a> (&ge; 0.7-3), <a href="../neuralnet/index.html">neuralnet</a>, <a href="../numDeriv/index.html">numDeriv</a>, <a href="../pamr/index.html">pamr</a>, <a href="../party/index.html">party</a>, <a href="../penalized/index.html">penalized</a> (&ge; 0.9-47), <a href="../pls/index.html">pls</a>, <a href="../PMCMR/index.html">PMCMR</a> (&ge; 4.1), <a href="../pROC/index.html">pROC</a> (&ge; 1.8), <a href="../randomForest/index.html">randomForest</a>, <a href="../randomForestSRC/index.html">randomForestSRC</a> (&ge; 2.2.0), <a href="../ranger/index.html">ranger</a> (&ge; 0.6.0), <a href="../RCurl/index.html">RCurl</a>, <a href="../Rfast/index.html">Rfast</a>, <a href="../rFerns/index.html">rFerns</a>, <a href="../rjson/index.html">rjson</a>, <a href="../rknn/index.html">rknn</a>, <a href="../rmarkdown/index.html">rmarkdown</a>, <a href="../robustbase/index.html">robustbase</a>, <a href="../ROCR/index.html">ROCR</a>, <a href="../rotationForest/index.html">rotationForest</a>, <a href="../rpart/index.html">rpart</a>, <a href="../RRF/index.html">RRF</a>, <a href="../rrlda/index.html">rrlda</a>, <a href="../rsm/index.html">rsm</a>, <a href="../RSNNS/index.html">RSNNS</a>, <a href="../RWeka/index.html">RWeka</a>, <a href="../sda/index.html">sda</a>, <a href="../shiny/index.html">shiny</a>, <a href="../smoof/index.html">smoof</a>, sparsediscrim, <a href="../sparseLDA/index.html">sparseLDA</a>, <a href="../stepPlr/index.html">stepPlr</a>, <a href="../SwarmSVM/index.html">SwarmSVM</a>, <a href="../svglite/index.html">svglite</a>, <a href="../testthat/index.html">testthat</a>, <a href="../tgp/index.html">tgp</a>, <a href="../TH.data/index.html">TH.data</a>, <a href="../xgboost/index.html">xgboost</a> (&ge; 0.6-2), <a href="../XML/index.html">XML</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2017-03-15</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Bernd Bischl [aut, cre],
+  Michel Lang [aut],
+  Lars Kotthoff [aut],
+  Julia Schiffner [aut],
+  Jakob Richter [aut],
+  Zachary Jones [aut],
+  Giuseppe Casalicchio [aut],
+  Mason Gallo [aut],
+  Jakob Bossek [ctb],
+  Erich Studerus [ctb],
+  Leonard Judt [ctb],
+  Tobias Kuehn [ctb],
+  Pascal Kerschke [ctb],
+  Florian Fendt [ctb],
+  Philipp Probst [ctb],
+  Xudong Sun [ctb],
+  Janek Thomas [ctb],
+  Bruno Vieira [ctb],
+  Laura Beggel [ctb],
+  Quay Au [ctb],
+  Martin Binder [ctb],
+  Florian Pfisterer [ctb],
+  Stefan Coors [ctb]</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Bernd Bischl  &#x3c;&#x62;&#x65;&#x72;&#x6e;&#x64;&#x5f;&#x62;&#x69;&#x73;&#x63;&#x68;&#x6c;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x78;&#x2e;&#x6e;&#x65;&#x74;&#x3e;</td>
+</tr>
+<tr>
+<td>BugReports:</td>
+<td><a href="https://github.com/mlr-org/mlr/issues">https://github.com/mlr-org/mlr/issues</a></td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/BSD_2_clause">BSD_2_clause</a> + file <a href="LICENSE">LICENSE</a></td>
+</tr>
+<tr>
+<td>URL:</td>
+<td><a href="https://github.com/mlr-org/mlr">https://github.com/mlr-org/mlr</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Citation:</td>
+<td><a href="citation.html">mlr citation info</a> </td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="news.html">NEWS</a> </td>
+</tr>
+<tr>
+<td>In&nbsp;views:</td>
+<td><a href="../../views/MachineLearning.html">MachineLearning</a></td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_mlr.html">mlr results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package mlr downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="mlr.pdf"> mlr.pdf </a> </td>
+</tr>
+<tr>
+<td>Vignettes:</td>
+<td>
+<a href="vignettes/mlr.html">mlr</a><br/>
+</td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/mlr_2.11.tar.gz"> mlr_2.11.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/mlr_2.11.zip">mlr_2.11.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/mlr_2.11.zip">mlr_2.11.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/mlr_2.11.zip">mlr_2.11.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: <a href="../../../bin/macosx/el-capitan/contrib/3.4/mlr_2.11.tgz">mlr_2.11.tgz</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/mlr_2.8.tgz">mlr_2.8.tgz</a> </td>
+</tr>
+<tr>
+<td> Old&nbsp;sources: </td>
+<td> <a href="../../../src/contrib/Archive/mlr"> mlr archive </a> </td>
+</tr>
+</table>
+<h4>Reverse dependencies:</h4>
+<table summary="Package mlr reverse dependencies">
+<tr>
+<td>Reverse&nbsp;depends:</td>
+<td><a href="../flacco/index.html">flacco</a>, <a href="../llama/index.html">llama</a>, <a href="../mlrMBO/index.html">mlrMBO</a>, <a href="../OOBCurve/index.html">OOBCurve</a>, <a href="../OpenML/index.html">OpenML</a>, <a href="../RBPcurve/index.html">RBPcurve</a>, <a href="../unbalanced/index.html">unbalanced</a></td>
+</tr>
+<tr>
+<td>Reverse&nbsp;imports:</td>
+<td><a href="../aslib/index.html">aslib</a></td>
+</tr>
+<tr>
+<td>Reverse&nbsp;enhances:</td>
+<td><a href="../liquidSVM/index.html">liquidSVM</a></td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=mlr"><samp>https://CRAN.R-project.org/package=mlr</samp></a>
+to link to this page.</p>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package ppiPre</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>ppiPre: Predict Protein-Protein Interactions Based on Functional and
+Topological Similarities</h2>
+<p>Computing similarities between proteins based on their GO annotation, KEGG annotation and PPI network topology. It integrates seven features (TCSS, IntelliGO, Wang, KEGG, Jaccard, RA and AA) to predict PPIs using an SVM classifier. Some internal functions to calculate GO semantic similarities are re-used from R package GOSemSim authored by Guangchuang Yu.</p>
+<table summary="Package ppiPre summary">
+<tr>
+<td>Version:</td>
+<td>1.9</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.1.0)</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="http://www.bioconductor.org/packages/release/bioc/html/AnnotationDbi.html"><span class="BioC">AnnotationDbi</span></a>, <a href="../igraph/index.html">igraph</a>, <a href="../e1071/index.html">e1071</a>, <a href="http://www.bioconductor.org/packages/release/bioc/html/GOSemSim.html"><span class="BioC">GOSemSim</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/GO.db.html"><span class="BioC">GO.db</span></a>, stats, utils</td>
+</tr>
+<tr>
+<td>Enhances:</td>
+<td><a href="http://www.bioconductor.org/packages/release/data/annotation/html/KEGG.db.html"><span class="BioC">KEGG.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html"><span class="BioC">org.Hs.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Sc.sgd.db.html"><span class="BioC">org.Sc.sgd.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Ag.eg.db.html"><span class="BioC">org.Ag.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Pt.eg.db.html"><span class="BioC">org.Pt.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Rn.eg.db.html"><span class="BioC">org.Rn.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Ss.eg.db.html"><span class="BioC">org.Ss.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.At.tair.db.html"><span class="BioC">org.At.tair.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Bt.eg.db.html"><span class="BioC">org.Bt.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Ce.eg.db.html"><span class="BioC">org.Ce.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Cf.eg.db.html"><span class="BioC">org.Cf.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Dm.eg.db.html"><span class="BioC">org.Dm.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Dr.eg.db.html"><span class="BioC">org.Dr.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.EcK12.eg.db.html"><span class="BioC">org.EcK12.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.EcSakai.eg.db.html"><span class="BioC">org.EcSakai.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Gg.eg.db.html"><span class="BioC">org.Gg.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Mm.eg.db.html"><span class="BioC">org.Mm.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Mmu.eg.db.html"><span class="BioC">org.Mmu.eg.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Pf.plasmo.db.html"><span class="BioC">org.Pf.plasmo.db</span></a>, <a href="http://www.bioconductor.org/packages/release/data/annotation/html/org.Xl.eg.db.html"><span class="BioC">org.Xl.eg.db</span></a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2015-07-28</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Yue Deng, Rongjie Shao, Gang Wang and Yuanjun Sun</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Yue Deng  &#x3c;&#x61;&#x6e;&#x66;&#x64;&#x65;&#x6e;&#x67;&#x20;&#x61;&#x74;&#x20;&#x31;&#x36;&#x33;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;</td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/GPL-2">GPL-2</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="NEWS">NEWS</a> </td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_ppiPre.html">ppiPre results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package ppiPre downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="ppiPre.pdf"> ppiPre.pdf </a> </td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/ppiPre_1.9.tar.gz"> ppiPre_1.9.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/ppiPre_1.9.zip">ppiPre_1.9.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/ppiPre_1.9.zip">ppiPre_1.9.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/ppiPre_1.9.zip">ppiPre_1.9.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: not available </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/ppiPre_1.9.tgz">ppiPre_1.9.tgz</a> </td>
+</tr>
+<tr>
+<td> Old&nbsp;sources: </td>
+<td> <a href="../../../src/contrib/Archive/ppiPre"> ppiPre archive </a> </td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=ppiPre"><samp>https://CRAN.R-project.org/package=ppiPre</samp></a>
+to link to this page.</p>
+</body>
+</html>

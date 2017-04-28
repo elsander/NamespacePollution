@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package broom</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="citation_title" content="Convert Statistical Analysis Objects into Tidy Data Frames [R package broom version 0.4.2]" />
+<meta name="citation_author" content="David Robinson" />
+<meta name="citation_publication_date.Published" content="2017-02-13" />
+<meta name="citation_public_url" content="https://CRAN.R-project.org/package=broom" />
+<meta name="DC.identifier" content="https://CRAN.R-project.org/package=broom" />
+<meta name="DC.publisher" content="Comprehensive R Archive Network (CRAN)" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>broom: Convert Statistical Analysis Objects into Tidy Data Frames</h2>
+<p>Convert statistical analysis objects from R into tidy data frames,
+    so that they can more easily be combined, reshaped and otherwise processed
+    with tools like 'dplyr', 'tidyr' and 'ggplot2'. The package provides three
+    S3 generics: tidy, which summarizes a model's statistical findings such as
+    coefficients of a regression; augment, which adds columns to the original
+    data such as predictions, residuals and cluster assignments; and glance, which
+    provides a one-row summary of model-level statistics.</p>
+<table summary="Package broom summary">
+<tr>
+<td>Version:</td>
+<td>0.4.2</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../plyr/index.html">plyr</a>, <a href="../dplyr/index.html">dplyr</a>, <a href="../tidyr/index.html">tidyr</a>, <a href="../psych/index.html">psych</a>, <a href="../stringr/index.html">stringr</a>, <a href="../reshape2/index.html">reshape2</a>, <a href="../nlme/index.html">nlme</a>, methods</td>
+</tr>
+<tr>
+<td>Suggests:</td>
+<td><a href="../knitr/index.html">knitr</a>, <a href="../boot/index.html">boot</a>, <a href="../survival/index.html">survival</a>, <a href="../gam/index.html">gam</a>, <a href="../glmnet/index.html">glmnet</a>, <a href="../lfe/index.html">lfe</a>, <a href="../Lahman/index.html">Lahman</a>, <a href="../MASS/index.html">MASS</a>, <a href="../sp/index.html">sp</a>, <a href="../maps/index.html">maps</a>, <a href="../maptools/index.html">maptools</a>, <a href="../multcomp/index.html">multcomp</a>, <a href="../testthat/index.html">testthat</a>, <a href="../lme4/index.html">lme4</a>, <a href="../zoo/index.html">zoo</a>, <a href="../lmtest/index.html">lmtest</a>, <a href="../plm/index.html">plm</a>, <a href="../biglm/index.html">biglm</a>, <a href="../ggplot2/index.html">ggplot2</a>, <a href="../nnet/index.html">nnet</a>, <a href="../geepack/index.html">geepack</a>, <a href="../AUC/index.html">AUC</a>, <a href="../ergm/index.html">ergm</a>, <a href="../network/index.html">network</a>, <a href="../statnet.common/index.html">statnet.common</a>, <a href="../xergm/index.html">xergm</a>, <a href="../btergm/index.html">btergm</a>, <a href="../binGroup/index.html">binGroup</a>, <a href="../Hmisc/index.html">Hmisc</a>, <a href="../bbmle/index.html">bbmle</a>, <a href="../gamlss/index.html">gamlss</a>, <a href="../rstan/index.html">rstan</a>, <a href="../rstanarm/index.html">rstanarm</a>, <a href="../brms/index.html">brms</a>, <a href="../coda/index.html">coda</a>, <a href="../gmm/index.html">gmm</a>, <a href="../Matrix/index.html">Matrix</a>, <a href="../ks/index.html">ks</a>, <a href="../purrr/index.html">purrr</a>, <a href="../orcutt/index.html">orcutt</a>, <a href="../mgcv/index.html">mgcv</a>, <a href="../lmodel2/index.html">lmodel2</a>, <a href="../poLCA/index.html">poLCA</a>, <a href="../mclust/index.html">mclust</a>, <a href="../covr/index.html">covr</a>, <a href="../lsmeans/index.html">lsmeans</a>, <a href="../betareg/index.html">betareg</a>, <a href="../robust/index.html">robust</a>, <a href="../akima/index.html">akima</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2017-02-13</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>David Robinson [aut, cre],
+  Matthieu Gomez [ctb],
+  Boris Demeshev [ctb],
+  Dieter Menne [ctb],
+  Benjamin Nutter [ctb],
+  Luke Johnston [ctb],
+  Ben Bolker [ctb],
+  Francois Briatte [ctb],
+  Jeffrey Arnold [ctb],
+  Jonah Gabry [ctb],
+  Luciano Selzer [ctb],
+  Gavin Simpson [ctb],
+  Jens Preussner [ctb],
+  Jay Hesselberth [ctb],
+  Hadley Wickham [ctb]</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>David Robinson  &#x3c;&#x61;&#x64;&#x6d;&#x69;&#x72;&#x61;&#x6c;&#x2e;&#x64;&#x61;&#x76;&#x69;&#x64;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;</td>
+</tr>
+<tr>
+<td>BugReports:</td>
+<td><a href="http://github.com/tidyverse/broom/issues">http://github.com/tidyverse/broom/issues</a></td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/MIT">MIT</a> + file <a href="LICENSE">LICENSE</a></td>
+</tr>
+<tr>
+<td>URL:</td>
+<td><a href="http://github.com/tidyverse/broom">http://github.com/tidyverse/broom</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="README.html">README</a> </td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_broom.html">broom results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package broom downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="broom.pdf"> broom.pdf </a> </td>
+</tr>
+<tr>
+<td>Vignettes:</td>
+<td>
+<a href="vignettes/bootstrapping.html">Tidy bootstrapping with dplyr+broom</a><br/>
+<a href="vignettes/broom.html">Introduction to broom</a><br/>
+<a href="vignettes/broom_and_dplyr.html">broom and dplyr</a><br/>
+<a href="vignettes/kmeans.html">kmeans with dplyr+broom</a><br/>
+</td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/broom_0.4.2.tar.gz"> broom_0.4.2.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/broom_0.4.2.zip">broom_0.4.2.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/broom_0.4.2.zip">broom_0.4.2.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/broom_0.4.2.zip">broom_0.4.2.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: <a href="../../../bin/macosx/el-capitan/contrib/3.4/broom_0.4.2.tgz">broom_0.4.2.tgz</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/broom_0.4.2.tgz">broom_0.4.2.tgz</a> </td>
+</tr>
+<tr>
+<td> Old&nbsp;sources: </td>
+<td> <a href="../../../src/contrib/Archive/broom"> broom archive </a> </td>
+</tr>
+</table>
+<h4>Reverse dependencies:</h4>
+<table summary="Package broom reverse dependencies">
+<tr>
+<td>Reverse&nbsp;depends:</td>
+<td><a href="../nlshelper/index.html">nlshelper</a></td>
+</tr>
+<tr>
+<td>Reverse&nbsp;imports:</td>
+<td><a href="../apaTables/index.html">apaTables</a>, <a href="../arsenal/index.html">arsenal</a>, <a href="../AutoModel/index.html">AutoModel</a>, <a href="../cdom/index.html">cdom</a>, <a href="../DeLorean/index.html">DeLorean</a>, <a href="../dotwhisker/index.html">dotwhisker</a>, <a href="../eyetrackingR/index.html">eyetrackingR</a>, <a href="../forestmodel/index.html">forestmodel</a>, <a href="../ggpmisc/index.html">ggpmisc</a>, <a href="../highcharter/index.html">highcharter</a>, <a href="../jpmesh/index.html">jpmesh</a>, <a href="../mason/index.html">mason</a>, <a href="../merTools/index.html">merTools</a>, <a href="../modelr/index.html">modelr</a>, <a href="../nlstimedist/index.html">nlstimedist</a>, <a href="../pixiedust/index.html">pixiedust</a>, <a href="../radiant.data/index.html">radiant.data</a>, <a href="../sjmisc/index.html">sjmisc</a>, <a href="../sjPlot/index.html">sjPlot</a>, <a href="../sjstats/index.html">sjstats</a>, <a href="../StroupGLMM/index.html">StroupGLMM</a>, <a href="../survminer/index.html">survminer</a>, <a href="../survutils/index.html">survutils</a>, <a href="../tadaatoolbox/index.html">tadaatoolbox</a>, <a href="../tidyquant/index.html">tidyquant</a>, <a href="../tidytext/index.html">tidytext</a>, <a href="../tidyverse/index.html">tidyverse</a>, <a href="../TSS.RESTREND/index.html">TSS.RESTREND</a>, <a href="../valr/index.html">valr</a>, <a href="../vdmR/index.html">vdmR</a></td>
+</tr>
+<tr>
+<td>Reverse&nbsp;suggests:</td>
+<td><a href="../autoimage/index.html">autoimage</a>, <a href="../crawl/index.html">crawl</a>, <a href="../eechidna/index.html">eechidna</a>, <a href="../fivethirtyeight/index.html">fivethirtyeight</a>, <a href="../GGally/index.html">GGally</a>, <a href="../ggsn/index.html">ggsn</a>, <a href="../grattan/index.html">grattan</a>, <a href="../groupdata2/index.html">groupdata2</a>, <a href="../huxtable/index.html">huxtable</a>, <a href="../lspline/index.html">lspline</a>, <a href="../lucid/index.html">lucid</a>, <a href="../macleish/index.html">macleish</a>, <a href="../plotly/index.html">plotly</a>, <a href="../spbabel/index.html">spbabel</a></td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=broom"><samp>https://CRAN.R-project.org/package=broom</samp></a>
+to link to this page.</p>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package cudaBayesreg</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>cudaBayesreg: CUDA Parallel Implementation of a Bayesian Multilevel Model for
+fMRI Data Analysis</h2>
+<p>Compute Unified Device Architecture (CUDA) is a software
+        platform for massively parallel high-performance computing on
+        NVIDIA GPUs. This package provides a CUDA implementation of a
+        Bayesian multilevel model for the analysis of brain fMRI data.
+        A fMRI data set consists of time series of volume data in 4D
+        space. Typically, volumes are collected as slices of 64 x 64
+        voxels. Analysis of fMRI data often relies on fitting linear
+        regression models at each voxel of the brain. The volume of the
+        data to be processed, and the type of statistical analysis to
+        perform in fMRI analysis, call for high-performance computing
+        strategies. In this package, the CUDA programming model uses a
+        separate thread for fitting a linear regression model at each
+        voxel in parallel. The global statistical model implements a
+        Gibbs Sampler for hierarchical linear models with a normal
+        prior. This model has been proposed by Rossi, Allenby and
+        McCulloch in &lsquo;Bayesian Statistics and Marketing&rsquo;, Chapter 3,
+        and is referred to as &lsquo;rhierLinearModel&rsquo; in the R-package
+        bayesm. A notebook equipped with a NVIDIA &lsquo;GeForce 8400M GS&rsquo;
+        card having Compute Capability 1.1 has been used in the tests.
+        The data sets used in the package's examples are available in
+        the separate package cudaBayesregData.</p>
+<table summary="Package cudaBayesreg summary">
+<tr>
+<td>Version:</td>
+<td>0.3-16</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.0.0), <a href="../cudaBayesregData/index.html">cudaBayesregData</a>, <a href="../oro.nifti/index.html">oro.nifti</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2015-01-07</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Adelino Ferreira da Silva</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Adelino Ferreira da Silva  &#x3c;&#x61;&#x66;&#x73;&#x20;&#x61;&#x74;&#x20;&#x66;&#x63;&#x74;&#x2e;&#x75;&#x6e;&#x6c;&#x2e;&#x70;&#x74;&#x3e;</td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/GPL-2">GPL-2</a> | <a href="../../licenses/GPL-3">GPL-3</a> [expanded from: GPL (&ge; 2)]</td>
+</tr>
+<tr>
+<td>URL:</td>
+<td><a href="http://www.r-project.org">http://www.r-project.org</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>SystemRequirements:</td>
+<td>nvcc (release &gt;= 3.1) (NVIDIA Cuda Compiler
+driver); Linux operating system; GNU make.</td>
+</tr>
+<tr>
+<td>Citation:</td>
+<td><a href="citation.html">cudaBayesreg citation info</a> </td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="README">README</a> <a href="NEWS">NEWS</a> </td>
+</tr>
+<tr>
+<td>In&nbsp;views:</td>
+<td><a href="../../views/Bayesian.html">Bayesian</a>, <a href="../../views/HighPerformanceComputing.html">HighPerformanceComputing</a>, <a href="../../views/MedicalImaging.html">MedicalImaging</a></td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_cudaBayesreg.html">cudaBayesreg results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package cudaBayesreg downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="cudaBayesreg.pdf"> cudaBayesreg.pdf </a> </td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/cudaBayesreg_0.3-16.tar.gz"> cudaBayesreg_0.3-16.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/ReadMe">not available</a>, r-release: <a href="../../../bin/windows/contrib/3.4/ReadMe">not available</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/ReadMe">not available</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: not available </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: not available </td>
+</tr>
+<tr>
+<td> Old&nbsp;sources: </td>
+<td> <a href="../../../src/contrib/Archive/cudaBayesreg"> cudaBayesreg archive </a> </td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=cudaBayesreg"><samp>https://CRAN.R-project.org/package=cudaBayesreg</samp></a>
+to link to this page.</p>
+</body>
+</html>

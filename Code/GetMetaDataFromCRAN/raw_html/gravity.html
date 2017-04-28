@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package gravity</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>gravity: A Compilation of Different Estimation Methods for Gravity Models</h2>
+<p>One can use gravity models to explain bilateral flows related to the sizes of bilateral partners, a measure of distance between them and other influences on interaction costs. The underlying idea is rather simple. The greater the masses of two bodies and the smaller the distance between them, the stronger they attract each other. This concept is applied to several research topics such as trade, migration or foreign direct investment. Even though the basic idea of gravity models is rather simple, they can become very complex when it comes to the choice of models or estimation methods. The package gravity targets to provide R users with the functions necessary to execute the most common estimation methods for gravity models, especially for cross-sectional data. It contains the functions Ordinary Least Squares (OLS), Fixed Effects, Double Demeaning (DDM), Bonus vetus OLS with simple averages (BVU) and with GDP-weights (BVW), Structural Iterated Least Squares (SILS), Tetrads as well as Poisson Pseudo Maximum Likelihood (PPML). By considering the descriptions of the estimation methods, users can see which method and data may be suited for a certain research question. In order to illustrate the estimation methods, this package includes a dataset called Gravity (see the description of the dataset for more information). On the Gravity Cookbook website (&lt;<a href="https://sites.google.com/site/hiegravity/">https://sites.google.com/site/hiegravity/</a>&gt;) Keith Head and Thierry Mayer provide Stata code for the most common estimation methods for gravity models when using cross-sectional data. In order to get comparable results in R, the methods presented in the package gravity are designed to be consistent with this Stata code when choosing the option of robust variance estimation. However, compared to the Stata code available, the functions presented in this package provide users with more flexibility regarding the type of estimation (robust or not robust), the number and type of independent variables as well as the possible data. The functions all estimate gravity models, but they differ in whether they estimate them in their multiplicative or additive form, their requirements with respect to the data, their handling of Multilateral Resistance terms as well as their possibilities concerning the inclusion of unilateral independent variables. Therefore, they normally lead to different estimation results. We refer the user to the Gravity Cookbook website (&lt;<a href="https://sites.google.com/site/hiegravity/">https://sites.google.com/site/hiegravity/</a>&gt;) for more information on gravity models in general. Head, K. and Mayer, T. (2014) &lt;<a href="http://dx.doi.org/10.1016/B978-0-444-54314-1.00003-3">doi:10.1016/B978-0-444-54314-1.00003-3</a>&gt; provide a comprehensive and accessible overview of the theoretical and empirical development of the gravity literature as well as the use of gravity models and the various estimation methods, especially their merits and potential problems regarding applicability as well as different gravity datasets. All functions were tested to work on cross-sectional data and are consistent with the Stata code mentioned above. For the use with panel data no tests were performed. Therefore, it is up to the user to ensure that the functions can be applied to panel data. For a comprehensive overview of gravity models for panel data see Egger, P., &amp; Pfaffermayr, M. (2003) &lt;<a href="http://dx.doi.org/10.1007/s001810200146">doi:10.1007/s001810200146</a>&gt;, Gomez-Herrera, E. (2013) &lt;<a href="http://dx.doi.org/10.1007/s00181-012-0576-2">doi:10.1007/s00181-012-0576-2</a>&gt; and Head, K., Mayer, T., &amp; Ries, J. (2010) &lt;<a href="http://dx.doi.org/10.1016/j.jinteco.2010.01.002">doi:10.1016/j.jinteco.2010.01.002</a>&gt; as well as the references therein (see also the references included in the descriptions of the different functions). Depending on the panel dataset and the variables - specifically the type of fixed effects - included in the model, it may easily occur that the model is not computable. Also, note that by including bilateral fixed effects such as country-pair effects, the coefficients of time-invariant observables such as distance can no longer be estimated. Depending on the specific model, the code of the respective function may has to be changed in order to exclude the distance variable from the estimation. At the very least, the user should take special care with respect to the meaning of the estimated coefficients and variances as well as the decision about which effects to include in the estimation. As, to our knowledge at the moment, there is no explicit literature covering the estimation of a gravity equation by Double Demeaning, Structural Iterated Least Squares or Bonus Vetus OLS using panel data, we do not recommend to apply these methods in this case. Contributions, extensions and error corrections are very welcome. Please do not hesitate to contact us.</p>
+<table summary="Package gravity summary">
+<tr>
+<td>Version:</td>
+<td>0.3</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.3.1), <a href="../lmtest/index.html">lmtest</a>, stats</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../sandwich/index.html">sandwich</a>, <a href="../multiwayvcov/index.html">multiwayvcov</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2017-01-31</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Anna-Lena Woelwer, Jan Pablo Burgard, Martin Bresslein</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Anna-Lena Woelwer  &#x3c;&#x73;&#x34;&#x61;&#x6e;&#x77;&#x6f;&#x65;&#x6c;&#x20;&#x61;&#x74;&#x20;&#x75;&#x6e;&#x69;&#x2d;&#x74;&#x72;&#x69;&#x65;&#x72;&#x2e;&#x64;&#x65;&#x3e;</td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/GPL-2">GPL-2</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>no</td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_gravity.html">gravity results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package gravity downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="gravity.pdf"> gravity.pdf </a> </td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/gravity_0.3.tar.gz"> gravity_0.3.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/gravity_0.3.zip">gravity_0.3.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/gravity_0.3.zip">gravity_0.3.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/gravity_0.3.zip">gravity_0.3.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: <a href="../../../bin/macosx/el-capitan/contrib/3.4/gravity_0.3.tgz">gravity_0.3.tgz</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/gravity_0.3.tgz">gravity_0.3.tgz</a> </td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=gravity"><samp>https://CRAN.R-project.org/package=gravity</samp></a>
+to link to this page.</p>
+</body>
+</html>

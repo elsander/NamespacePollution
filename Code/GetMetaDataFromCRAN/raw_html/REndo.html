@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package REndo</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>REndo: Fitting Linear Models with Endogenous Regressors using Latent
+Instrumental Variables</h2>
+<p>Fits linear models with endogenous regressor using latent
+    instrumental variable approaches. The methods included in the package
+    are Lewbel's (1997) &lt;<a href="http://dx.doi.org/10.2307/2171884">doi:10.2307/2171884</a>&gt; higher moments approach as well as Lewbel's (2012) &lt;<a href="http://dx.doi.org/10.1080/07350015.2012.643126">doi:10.1080/07350015.2012.643126</a>&gt;
+    heteroskedasticity approach, Park and Gupta's (2012) &lt;<a href="http://dx.doi.org/10.1287/mksc.1120.0718">doi:10.1287/mksc.1120.0718</a>&gt;joint estimation method
+    that uses Gaussian copula and Kim and Frees's (2007) &lt;<a href="http://dx.doi.org/10.1007/s11336-007-9008-1">doi:10.1007/s11336-007-9008-1</a>&gt; multilevel generalized
+    method of moment approach that deals with endogeneity in a multilevel setting.
+    These are statistical techniques to address the endogeneity problem where no
+    external instrumental variables are needed.
+    This version: 
+       - solves an error occurring when using the multilevelIV() function with two levels, random intercept. 
+       - returns the AIC and BIC for copulaCorrection() (method 1) and latentIV() methods.
+       - residuals and fitted values can be saved by users for latentIV() and copulaCorrection() methods.
+       - improves the summary methods for copulaCorrection() and multilevelIV() functions.</p>
+<table summary="Package REndo summary">
+<tr>
+<td>Version:</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>methods</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../optimx/index.html">optimx</a>, <a href="../mvtnorm/index.html">mvtnorm</a>, <a href="../AER/index.html">AER</a>, <a href="../e1071/index.html">e1071</a>, stats, <a href="../corpcor/index.html">corpcor</a>, <a href="../lme4/index.html">lme4</a>, <a href="../gmm/index.html">gmm</a>, <a href="../lmtest/index.html">lmtest</a>, <a href="../plyr/index.html">plyr</a>, <a href="../sandwich/index.html">sandwich</a>, <a href="../Matrix/index.html">Matrix</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2017-04-10</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Raluca Gui,
+    Markus Meierer,
+    Rene Algesheimer</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Raluca Gui  &#x3c;&#x72;&#x61;&#x6c;&#x75;&#x63;&#x61;&#x2e;&#x67;&#x75;&#x69;&#x20;&#x61;&#x74;&#x20;&#x62;&#x75;&#x73;&#x69;&#x6e;&#x65;&#x73;&#x73;&#x2e;&#x75;&#x7a;&#x68;&#x2e;&#x63;&#x68;&#x3e;</td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/GPL-3">GPL-3</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>no</td>
+</tr>
+<tr>
+<td>In&nbsp;views:</td>
+<td><a href="../../views/Econometrics.html">Econometrics</a></td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_REndo.html">REndo results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package REndo downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="REndo.pdf"> REndo.pdf </a> </td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/REndo_1.2.tar.gz"> REndo_1.2.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/REndo_1.2.zip">REndo_1.2.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/REndo_1.2.zip">REndo_1.2.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/REndo_1.2.zip">REndo_1.2.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: <a href="../../../bin/macosx/el-capitan/contrib/3.4/REndo_1.2.tgz">REndo_1.2.tgz</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/REndo_1.2.tgz">REndo_1.2.tgz</a> </td>
+</tr>
+<tr>
+<td> Old&nbsp;sources: </td>
+<td> <a href="../../../src/contrib/Archive/REndo"> REndo archive </a> </td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=REndo"><samp>https://CRAN.R-project.org/package=REndo</samp></a>
+to link to this page.</p>
+</body>
+</html>

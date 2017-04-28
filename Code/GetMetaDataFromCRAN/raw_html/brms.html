@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package brms</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="citation_title" content="Bayesian Regression Models using Stan [R package brms version 1.6.1]" />
+<meta name="citation_author" content="Paul-Christian Bürkner" />
+<meta name="citation_publication_date.Published" content="2017-04-17" />
+<meta name="citation_public_url" content="https://CRAN.R-project.org/package=brms" />
+<meta name="DC.identifier" content="https://CRAN.R-project.org/package=brms" />
+<meta name="DC.publisher" content="Comprehensive R Archive Network (CRAN)" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>brms: Bayesian Regression Models using Stan</h2>
+<p>Fit Bayesian generalized (non-)linear multilevel models 
+    using Stan for full Bayesian inference. A wide range of distributions 
+    and link functions are supported, allowing users to fit &ndash; among others &ndash; 
+    linear, robust linear, count data, survival, response times, ordinal, 
+    zero-inflated, hurdle, and even self-defined mixture models all in a 
+    multilevel context. Further modeling options include non-linear and 
+    smooth terms, auto-correlation structures, censored data, meta-analytic 
+    standard errors, and quite a few more. In addition, all parameters of the 
+    response distribution can be predicted in order to perform distributional 
+    regression. Prior specifications are flexible and explicitly encourage 
+    users to apply prior distributions that actually reflect their beliefs.
+    Model fit can easily be assessed and compared with posterior predictive 
+    checks and leave-one-out cross-validation.</p>
+<table summary="Package brms summary">
+<tr>
+<td>Version:</td>
+<td>1.6.1</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.2.0), <a href="../Rcpp/index.html">Rcpp</a> (&ge; 0.12.0), <a href="../ggplot2/index.html">ggplot2</a> (&ge; 2.0.0), methods</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../rstan/index.html">rstan</a> (&ge; 2.14.1), <a href="../loo/index.html">loo</a> (&ge; 1.1.0), <a href="../shinystan/index.html">shinystan</a> (&ge; 2.2.1), <a href="../Matrix/index.html">Matrix</a> (&ge; 1.1.1), <a href="../mgcv/index.html">mgcv</a> (&ge; 1.8-13), <a href="../rstantools/index.html">rstantools</a> (&ge; 1.2.0), <a href="../bayesplot/index.html">bayesplot</a> (&ge; 1.2.0), <a href="../matrixStats/index.html">matrixStats</a>, <a href="../nlme/index.html">nlme</a>, <a href="../coda/index.html">coda</a>, <a href="../abind/index.html">abind</a>, stats, <a href="../RWiener/index.html">RWiener</a>, graphics, utils, parallel, grDevices</td>
+</tr>
+<tr>
+<td>Suggests:</td>
+<td><a href="../testthat/index.html">testthat</a> (&ge; 0.9.1), <a href="../arm/index.html">arm</a>, <a href="../mvtnorm/index.html">mvtnorm</a>, <a href="../R.rsp/index.html">R.rsp</a>, <a href="../knitr/index.html">knitr</a>, <a href="../rmarkdown/index.html">rmarkdown</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2017-04-17</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Paul-Christian Bürkner [aut, cre]</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Paul-Christian Bürkner  &#x3c;&#x70;&#x61;&#x75;&#x6c;&#x2e;&#x62;&#x75;&#x65;&#x72;&#x6b;&#x6e;&#x65;&#x72;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;</td>
+</tr>
+<tr>
+<td>BugReports:</td>
+<td><a href="https://github.com/paul-buerkner/brms/issues">https://github.com/paul-buerkner/brms/issues</a></td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/GPL-3">GPL (&ge; 3)</a></td>
+</tr>
+<tr>
+<td>URL:</td>
+<td><a href="https://github.com/paul-buerkner/brms">https://github.com/paul-buerkner/brms</a>,
+<a href="https://groups.google.com/forum/#!forum/brms-users">https://groups.google.com/forum/#!forum/brms-users</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Citation:</td>
+<td><a href="citation.html">brms citation info</a> </td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="README.html">README</a> <a href="news.html">NEWS</a> </td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_brms.html">brms results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package brms downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="brms.pdf"> brms.pdf </a> </td>
+</tr>
+<tr>
+<td>Vignettes:</td>
+<td>
+<a href="vignettes/brms_distreg.html">Fit Distributional Models with brms</a><br/>
+<a href="vignettes/brms_families.html">Parameterization of response distributions in brms</a><br/>
+<a href="vignettes/brms_monotonic.html">Estimate monotonic effects with brms</a><br/>
+<a href="vignettes/brms_nonlinear.html">Fit Non-Linear Models with brms</a><br/>
+<a href="vignettes/brms_phylogenetics.html">Fit phylogenetic models with brms</a><br/>
+<a href="vignettes/brms_multilevel.pdf">Multilevel Models with brms</a><br/>
+<a href="vignettes/brms_overview.pdf">Overview of the brms Package</a><br/>
+</td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/brms_1.6.1.tar.gz"> brms_1.6.1.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/brms_1.6.1.zip">brms_1.6.1.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/brms_1.6.1.zip">brms_1.6.1.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/brms_1.6.1.zip">brms_1.6.1.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: <a href="../../../bin/macosx/el-capitan/contrib/3.4/brms_1.6.1.tgz">brms_1.6.1.tgz</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/brms_1.6.1.tgz">brms_1.6.1.tgz</a> </td>
+</tr>
+<tr>
+<td> Old&nbsp;sources: </td>
+<td> <a href="../../../src/contrib/Archive/brms"> brms archive </a> </td>
+</tr>
+</table>
+<h4>Reverse dependencies:</h4>
+<table summary="Package brms reverse dependencies">
+<tr>
+<td>Reverse&nbsp;suggests:</td>
+<td><a href="../broom/index.html">broom</a></td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=brms"><samp>https://CRAN.R-project.org/package=brms</samp></a>
+to link to this page.</p>
+</body>
+</html>

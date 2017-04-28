@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package sprint</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>sprint: Simple Parallel R INTerface</h2>
+<p>SPRINT (Simple Parallel R INTerface) is a parallel
+        framework for R. It provides a High Performance Computing (HPC)
+        harness which allows R scripts to run on HPC clusters. SPRINT
+        contains a library of selected R functions that have been
+        parallelized. Functions are named after the original R function
+        with the added prefix 'p', i.e. the parallel version of cor()
+        in SPRINT is called pcor(). Call to the parallel R functions
+        are included directly in standard R scripts.
+		SPRINT contains functions for correlation (pcor), partitioning around medoids (ppam), 
+		apply (papply), permutation testing (pmaxT), bootstrapping (pboot), random forest (prandomForest), 
+		rank product (pRP) and hamming distance (pstringdistmatrix). </p>
+<table summary="Package sprint summary">
+<tr>
+<td>Version:</td>
+<td>1.0.7</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 2.9.2), <a href="../rlecuyer/index.html">rlecuyer</a>, <a href="../ff/index.html">ff</a> (&ge; 2.1-1), <a href="../randomForest/index.html">randomForest</a></td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../boot/index.html">boot</a>, <a href="../e1071/index.html">e1071</a></td>
+</tr>
+<tr>
+<td>Suggests:</td>
+<td><a href="../cluster/index.html">cluster</a>, <a href="../stringdist/index.html">stringdist</a>, <a href="../RUnit/index.html">RUnit</a>, <a href="../Matrix/index.html">Matrix</a>, <a href="../SparseM/index.html">SparseM</a>, <a href="http://www.bioconductor.org/packages/release/bioc/html/multtest.html"><span class="BioC">multtest</span></a>, <a href="http://www.bioconductor.org/packages/release/bioc/html/Biostrings.html"><span class="BioC">Biostrings</span></a>, <a href="http://www.bioconductor.org/packages/release/bioc/html/ShortRead.html"><span class="BioC">ShortRead</span></a>, <a href="http://www.bioconductor.org/packages/release/data/experiment/html/golubEsets.html"><span class="BioC">golubEsets</span></a>, <a href="http://www.bioconductor.org/packages/release/bioc/html/RankProd.html"><span class="BioC">RankProd</span></a></td>
+</tr>
+<tr>
+<td>OS_type:</td>
+<td>unix</td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2014-09-29</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>University of Edinburgh SPRINT Team</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Eilidh Troup  &#x3c;&#x65;&#x2e;&#x74;&#x72;&#x6f;&#x75;&#x70;&#x20;&#x61;&#x74;&#x20;&#x65;&#x70;&#x63;&#x63;&#x2e;&#x65;&#x64;&#x2e;&#x61;&#x63;&#x2e;&#x75;&#x6b;&#x3e;</td>
+</tr>
+<tr>
+<td>Contact:</td>
+<td>&#x55;&#x6e;&#x69;&#x76;&#x65;&#x72;&#x73;&#x69;&#x74;&#x79;&#x20;&#x6f;&#x66;&#x20;&#x45;&#x64;&#x69;&#x6e;&#x62;&#x75;&#x72;&#x67;&#x68;&#x20;&#x53;&#x50;&#x52;&#x49;&#x4e;&#x54;&#x20;&#x54;&#x65;&#x61;&#x6d;&#x20;&#x3c;&#x73;&#x70;&#x72;&#x69;&#x6e;&#x74;&#x40;&#x65;&#x64;&#x2e;&#x61;&#x63;&#x2e;&#x75;&#x6b;&#x3e;</td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/GPL-3">GPL (&ge; 3)</a></td>
+</tr>
+<tr>
+<td>Copyright:</td>
+<td>University of Edinburgh</td>
+</tr>
+<tr>
+<td>URL:</td>
+<td><a href="http://www.r-sprint.org">http://www.r-sprint.org</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>SystemRequirements:</td>
+<td>MPI(&gt;= 2.0)</td>
+</tr>
+<tr>
+<td>Citation:</td>
+<td><a href="citation.html">sprint citation info</a> </td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="README">README</a> <a href="NEWS">NEWS</a> </td>
+</tr>
+<tr>
+<td>In&nbsp;views:</td>
+<td><a href="../../views/HighPerformanceComputing.html">HighPerformanceComputing</a></td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_sprint.html">sprint results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package sprint downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="sprint.pdf"> sprint.pdf </a> </td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/sprint_1.0.7.tar.gz"> sprint_1.0.7.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/ReadMe">not available</a>, r-release: <a href="../../../bin/windows/contrib/3.4/ReadMe">not available</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/ReadMe">not available</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: not available </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: not available </td>
+</tr>
+<tr>
+<td> Old&nbsp;sources: </td>
+<td> <a href="../../../src/contrib/Archive/sprint"> sprint archive </a> </td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=sprint"><samp>https://CRAN.R-project.org/package=sprint</samp></a>
+to link to this page.</p>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package brglm2</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="citation_title" content="Bias Reduction in Generalized Linear Models [R package brglm2 version 0.1.3]" />
+<meta name="citation_author" content="Ioannis Kosmidis" />
+<meta name="citation_publication_date.Published" content="2017-04-04" />
+<meta name="citation_public_url" content="https://CRAN.R-project.org/package=brglm2" />
+<meta name="DC.identifier" content="https://CRAN.R-project.org/package=brglm2" />
+<meta name="DC.publisher" content="Comprehensive R Archive Network (CRAN)" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>brglm2: Bias Reduction in Generalized Linear Models</h2>
+<p>Estimation and inference from generalized linear models
+    based on various methods for bias reduction. The brglmFit fitting
+    method can achieve reduction of estimation bias either through the
+    adjusted score equations approach in Firth (1993)
+    &lt;<a href="https://doi.org/10.1093/biomet/80.1.27">https://doi.org/10.1093/biomet/80.1.27</a>&gt; and Kosmidis and Firth
+    (2009) &lt;<a href="https://doi.org/10.1093/biomet/asp055">https://doi.org/10.1093/biomet/asp055</a>&gt;, or through the
+    direct subtraction of an estimate of the bias of the maximum
+    likelihood estimator from the maximum likelihood estimates as in
+    Cordeiro and McCullagh (1991)
+    &lt;<a href="http://www.jstor.org/stable/2345592">http://www.jstor.org/stable/2345592</a>&gt;. In the special case of
+    generalized linear models for binomial and multinomial responses,
+    the adjusted score equations approach returns estimates with
+    improved frequentist properties, that are also always finite, even
+    in cases where the maximum likelihood estimates are infinite
+    (e.g. complete and quasi-complete separation). Estimation in all
+    cases takes place via a quasi Fisher scoring algorithm, and S3
+    methods for the construction of of confidence intervals for the
+    reduced-bias estimates are provided.</p>
+<table summary="Package brglm2 summary">
+<tr>
+<td>Version:</td>
+<td>0.1.3</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.3.0)</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../MASS/index.html">MASS</a>, stats, <a href="../Matrix/index.html">Matrix</a>, graphics, <a href="../nnet/index.html">nnet</a>, <a href="../enrichwith/index.html">enrichwith</a></td>
+</tr>
+<tr>
+<td>Suggests:</td>
+<td><a href="../testthat/index.html">testthat</a>, <a href="../knitr/index.html">knitr</a>, <a href="../rmarkdown/index.html">rmarkdown</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2017-04-04</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Ioannis Kosmidis [aut, cre]</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Ioannis Kosmidis  &#x3c;&#x69;&#x2e;&#x6b;&#x6f;&#x73;&#x6d;&#x69;&#x64;&#x69;&#x73;&#x20;&#x61;&#x74;&#x20;&#x75;&#x63;&#x6c;&#x2e;&#x61;&#x63;&#x2e;&#x75;&#x6b;&#x3e;</td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/GPL-2">GPL-2</a> | <a href="../../licenses/GPL-3">GPL-3</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Citation:</td>
+<td><a href="citation.html">brglm2 citation info</a> </td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="README.html">README</a> <a href="news.html">NEWS</a> </td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_brglm2.html">brglm2 results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package brglm2 downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="brglm2.pdf"> brglm2.pdf </a> </td>
+</tr>
+<tr>
+<td>Vignettes:</td>
+<td>
+<a href="vignettes/iteration.pdf">Bias reduction in generalized linear models using enrichwith</a><br/>
+</td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/brglm2_0.1.3.tar.gz"> brglm2_0.1.3.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/brglm2_0.1.3.zip">brglm2_0.1.3.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/brglm2_0.1.3.zip">brglm2_0.1.3.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/brglm2_0.1.3.zip">brglm2_0.1.3.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: <a href="../../../bin/macosx/el-capitan/contrib/3.4/brglm2_0.1.3.tgz">brglm2_0.1.3.tgz</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/brglm2_0.1.3.tgz">brglm2_0.1.3.tgz</a> </td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=brglm2"><samp>https://CRAN.R-project.org/package=brglm2</samp></a>
+to link to this page.</p>
+</body>
+</html>

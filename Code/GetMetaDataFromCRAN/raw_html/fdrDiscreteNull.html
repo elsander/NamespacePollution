@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package fdrDiscreteNull</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>fdrDiscreteNull: False Discovery Rate Procedure Under Discrete Null Distributions</h2>
+<p>It is known that current false discovery rate (FDR) procedures can be very conservative
+             when applied to p-values (and test statistics) with discrete (and heterogeneous) null distributions.
+             This package implements the more powerful weighted generalized FDR procedure that adapts to these two features of the discrete paradigm for multiple testing. 
+             The package takes in the original data set rather than the p-values in order to carry out the adjustments needed for multiple testing in this paradigm. The methodology applies also to multiple testing where the null p-values are uniformly distributed.
+             The package implements the method for three types of test statistics and their p-values:
+             (a) binomial test on if two independent Poisson distributions have the same means, (b) Fisher's exact test on if the conditional distribution is the same as the marginal distribution for two binomial distributions,
+             (c) the exact negative binomial test on if two independent negative binomial distributions with the same size parameter have the same means. 
+             It depends on the R packages &ldquo;MCMCpack&rdquo; to use its function &ldquo;dnoncenhypergeom&rdquo; for hypergeometric distributions, and edgeR to uses its normalization techniques for data that follow negative binomial distributions.</p>
+<table summary="Package fdrDiscreteNull summary">
+<tr>
+<td>Version:</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.1.0)</td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../MCMCpack/index.html">MCMCpack</a>, <a href="http://www.bioconductor.org/packages/release/bioc/html/edgeR.html"><span class="BioC">edgeR</span></a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2015-02-16</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Xiongzhi Chen and R.W. Doerge</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Xiongzhi Chen  &#x3c;&#x78;&#x69;&#x6f;&#x6e;&#x67;&#x7a;&#x68;&#x69;&#x20;&#x61;&#x74;&#x20;&#x70;&#x72;&#x69;&#x6e;&#x63;&#x65;&#x74;&#x6f;&#x6e;&#x2e;&#x65;&#x64;&#x75;&#x3e;</td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/LGPL-2">LGPL-2</a> | <a href="../../licenses/LGPL-2.1">LGPL-2.1</a> | <a href="../../licenses/LGPL-3">LGPL-3</a> [expanded from: LGPL]</td>
+</tr>
+<tr>
+<td>URL:</td>
+<td><a href="http://www.princeton.edu/~xiongzhi/fdrDiscreteNull">http://www.princeton.edu/~xiongzhi/fdrDiscreteNull</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>no</td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_fdrDiscreteNull.html">fdrDiscreteNull results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package fdrDiscreteNull downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="fdrDiscreteNull.pdf"> fdrDiscreteNull.pdf </a> </td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/fdrDiscreteNull_1.0.tar.gz"> fdrDiscreteNull_1.0.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/fdrDiscreteNull_1.0.zip">fdrDiscreteNull_1.0.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/fdrDiscreteNull_1.0.zip">fdrDiscreteNull_1.0.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/fdrDiscreteNull_1.0.zip">fdrDiscreteNull_1.0.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: not available </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/fdrDiscreteNull_1.0.tgz">fdrDiscreteNull_1.0.tgz</a> </td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=fdrDiscreteNull"><samp>https://CRAN.R-project.org/package=fdrDiscreteNull</samp></a>
+to link to this page.</p>
+</body>
+</html>

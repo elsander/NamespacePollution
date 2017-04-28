@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>CRAN - Package httptest</title>
+<link rel="stylesheet" type="text/css" href="../../CRAN_web.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="citation_title" content="A Test Environment for HTTP Requests [R package httptest version 1.3.0]" />
+<meta name="citation_author" content="Neal Richardson" />
+<meta name="citation_publication_date.Published" content="2017-04-13" />
+<meta name="citation_public_url" content="https://CRAN.R-project.org/package=httptest" />
+<meta name="DC.identifier" content="https://CRAN.R-project.org/package=httptest" />
+<meta name="DC.publisher" content="Comprehensive R Archive Network (CRAN)" />
+<style type="text/css">
+  table td { vertical-align: top; }
+</style>
+</head>
+<body>
+<h2>httptest: A Test Environment for HTTP Requests</h2>
+<p>Testing code and packages that communicate with remote servers can
+    be painful. Dealing with authentication, bootstrapping server state,
+    cleaning up objects that may get created during the test run, network
+    flakiness, and other complications can make testing seem too costly to
+    bother with. But it doesn't need to be that hard. This package enables one
+    to test all of the logic on the R sides of the API in your package without
+    requiring access to the remote service. Importantly, it provides three test
+    contexts that mock the network connection in different ways, and it offers
+    additional expectations to assert that HTTP requests were&ndash;or were
+    not&ndash;made. Using these tools, one can test that code is making the intended
+    requests and that it handles the expected responses correctly, all without
+    depending on a connection to a remote API.</p>
+<table summary="Package httptest summary">
+<tr>
+<td>Version:</td>
+<td>1.3.0</td>
+</tr>
+<tr>
+<td>Depends:</td>
+<td>R (&ge; 3.0.0), <a href="../testthat/index.html">testthat</a></td>
+</tr>
+<tr>
+<td>Imports:</td>
+<td><a href="../digest/index.html">digest</a>, <a href="../httr/index.html">httr</a>, <a href="../jsonlite/index.html">jsonlite</a></td>
+</tr>
+<tr>
+<td>Published:</td>
+<td>2017-04-13</td>
+</tr>
+<tr>
+<td>Author:</td>
+<td>Neal Richardson [aut, cre]</td>
+</tr>
+<tr>
+<td>Maintainer:</td>
+<td>Neal Richardson  &#x3c;&#x6e;&#x65;&#x61;&#x6c;&#x2e;&#x70;&#x2e;&#x72;&#x69;&#x63;&#x68;&#x61;&#x72;&#x64;&#x73;&#x6f;&#x6e;&#x20;&#x61;&#x74;&#x20;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;&#x3e;</td>
+</tr>
+<tr>
+<td>BugReports:</td>
+<td><a href="https://github.com/nealrichardson/httptest/issues">https://github.com/nealrichardson/httptest/issues</a></td>
+</tr>
+<tr>
+<td>License:</td>
+<td><a href="../../licenses/MIT">MIT</a> + file <a href="LICENSE">LICENSE</a></td>
+</tr>
+<tr>
+<td>URL:</td>
+<td><a href="https://github.com/nealrichardson/httptest">https://github.com/nealrichardson/httptest</a></td>
+</tr>
+<tr>
+<td>NeedsCompilation:</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Materials:</td>
+<td><a href="README.html">README</a> <a href="news.html">NEWS</a> </td>
+</tr>
+<tr>
+<td>CRAN&nbsp;checks:</td>
+<td><a href="../../checks/check_results_httptest.html">httptest results</a></td>
+</tr>
+</table>
+<h4>Downloads:</h4>
+<table summary="Package httptest downloads">
+<tr>
+<td> Reference&nbsp;manual: </td>
+<td> <a href="httptest.pdf"> httptest.pdf </a> </td>
+</tr>
+<tr>
+<td> Package&nbsp;source: </td>
+<td> <a href="../../../src/contrib/httptest_1.3.0.tar.gz"> httptest_1.3.0.tar.gz </a> </td>
+</tr>
+<tr>
+<td> Windows&nbsp;binaries: </td>
+<td> r-devel: <a href="../../../bin/windows/contrib/3.5/httptest_1.3.0.zip">httptest_1.3.0.zip</a>, r-release: <a href="../../../bin/windows/contrib/3.4/httptest_1.3.0.zip">httptest_1.3.0.zip</a>, r-oldrel: <a href="../../../bin/windows/contrib/3.3/httptest_1.3.0.zip">httptest_1.3.0.zip</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;El&nbsp;Capitan&nbsp;binaries: </td>
+<td> r-release: <a href="../../../bin/macosx/el-capitan/contrib/3.4/httptest_1.3.0.tgz">httptest_1.3.0.tgz</a> </td>
+</tr>
+<tr>
+<td> OS&nbsp;X&nbsp;Mavericks&nbsp;binaries: </td>
+<td> r-oldrel: <a href="../../../bin/macosx/mavericks/contrib/3.3/httptest_1.3.0.tgz">httptest_1.3.0.tgz</a> </td>
+</tr>
+<tr>
+<td> Old&nbsp;sources: </td>
+<td> <a href="../../../src/contrib/Archive/httptest"> httptest archive </a> </td>
+</tr>
+</table>
+<h4>Reverse dependencies:</h4>
+<table summary="Package httptest reverse dependencies">
+<tr>
+<td>Reverse&nbsp;suggests:</td>
+<td><a href="../crunch/index.html">crunch</a>, <a href="../httpcache/index.html">httpcache</a>, <a href="../rGoodData/index.html">rGoodData</a></td>
+</tr>
+</table>
+<h4>Linking:</h4>
+<p>Please use the canonical form
+<a href="https://CRAN.R-project.org/package=httptest"><samp>https://CRAN.R-project.org/package=httptest</samp></a>
+to link to this page.</p>
+</body>
+</html>
